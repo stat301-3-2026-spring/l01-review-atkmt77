@@ -44,7 +44,15 @@ Provide a brief outline/overview of the steps involved in a supervised machine l
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+- Initial data clean up (eg. removing missing observations, renaming variables...)
+- Conduct EDA
+- Initial split 
+- Define recipes 
+- Define models
+- Fitting models to the training dataset
+- Fittitng models to the testing dataset
+- Evaluate models' performances
+
 
 :::
 
@@ -55,7 +63,11 @@ Explain the difference between supervised and unsupervised learning.
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Supervised learning involves automatic data pattern detection on pre-categorized data, where outcome y is not required. It consists of parametric and non-parametric models. For unsupervised learning, it involves pattern and structure recognition on unlabeled data. 
+
+**unsupervised learning has no target variable
+
+
 
 :::
 
@@ -68,7 +80,8 @@ In general, we can classify a model by its purpose into 1 of the 3 categories be
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+- Describes or illustrate characteristics and/or relationships of data
+- Visually emphasizes trends 
 
 :::
 
@@ -77,7 +90,7 @@ YOUR SOLUTION HERE
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Produces a decision to a research question or tests a hypothesis
 
 :::
 
@@ -86,7 +99,7 @@ YOUR SOLUTION HERE
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Produces the most accurate prediction for new data
 
 :::
 
@@ -101,7 +114,7 @@ What does it mean to be a mechanistic model?
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Usually Parametric models, make assumptions on f(x)
 
 :::
 
@@ -112,7 +125,7 @@ What does it mean to be an empirically driven model?
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Having no assumption about f(x)
 
 :::
 
@@ -123,7 +136,7 @@ How does the mechanistic and empirically driven model terminology relate to the 
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Parametric models are mechanistic models, nonparametric models are empirically driven models 
 
 :::
 
