@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Ami Takamatsu">
-<meta name="dcterms.date" content="2026-04-01">
+<meta name="dcterms.date" content="2026-04-05">
 
 <title>L01 Ami Takamatsu</title>
 <style>
@@ -2229,7 +2229,7 @@ vertical-align: -.125em;
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">April 1, 2026</p>
+      <p class="date">April 5, 2026</p>
     </div>
   </div>
   
@@ -2280,8 +2280,10 @@ vertical-align: -.125em;
 <li>Initial split</li>
 <li>Define recipes</li>
 <li>Define models</li>
-<li>Fitting models to the training dataset</li>
-<li>Fittitng models to the testing dataset</li>
+<li>Perform resampling (eg. cross validation)</li>
+<li>Tune hyperparameters</li>
+<li>Fit final model on training data</li>
+<li>Generate predictions on test data</li>
 <li>Evaluate models’ performances</li>
 </ul>
 </div>
@@ -2300,8 +2302,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Supervised learning involves automatic data pattern detection on pre-categorized data, where outcome y is not required. It consists of parametric and non-parametric models. For unsupervised learning, it involves pattern and structure recognition on unlabeled data.</p>
-<p>**unsupervised learning has no target variable</p>
+<p>Supervised learning uses labeled data, meaning each observation includes both input features and an outcome variable y, so the model learns to predict an outcome variable from inputs. In contrast, unsupervised learning uses unlabeled data, where there is no outcome variable, and the model focuses on discovering patterns or structure within the input features themselves rather than predicting a specific output.</p>
 </div>
 </div>
 </section>
@@ -2376,7 +2377,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Usually Parametric models, make assumptions on f(x)</p>
+<p>A mechanistic model tries to explicitly represent how and why the outcome occurs using known relationships, rules, or physical laws, instead of only using data to predict an outcome.</p>
 </div>
 </div>
 </section>
@@ -2393,7 +2394,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Having no assumption about f(x)</p>
+<p>It focuses on learning relationships between inputs and an outcome based on patters in the data, instead of predicting an outcome based on known underlying mechanisms.</p>
 </div>
 </div>
 </section>
@@ -2410,7 +2411,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Parametric models are mechanistic models, nonparametric models are empirically driven models</p>
+<p>Mechanistic vs empirically driven models describe where a model comes from. Mechanistic models are based on known processes or theory, while empirical models are learned from data. Parametric vs nonparametric models describe how a model is structured. Parametric models assume a fixed functional form with a limited number of parameters, while nonparametric models are more flexible and can adapt to complex patterns. Mechanistic models are usually parametric, while empirically driven models can be either parametric or nonparametric.</p>
 </div>
 </div>
 </section>
@@ -2427,7 +2428,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>In general, mechanistic models are easier to interpret because they are based on known cause-and-effect relationships, so each parameter has a clear meaning. Empirically driven models are often harder to interpret since they focus on fitting patters in data, and more flexible models (eg. random forest) can behave like black boxes.</p>
 </div>
 </div>
 </section>
@@ -2444,7 +2445,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>In general, mechanistic models are less flexible because they are built on predefined equations or theories, so their structure is fixed and only a few parameters can change. Empirically driven models are more flexible because they learn patterns directly from data and can adapt to complex relationships without assuming a specific form.</p>
 </div>
 </div>
 </section>
@@ -2461,7 +2462,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>Mechanistic models are typically less flexible, so they tend to have higher bias (they may oversimplify reality if the assumed mechanism is imperfect) but lower variance (they are more stable and less sensitive to the specific dataset). In contrast, empirically driven models are often more flexible, meaning that they tend to have lower bias (they can fit complex patterns better) but higher variance (they may overfit and be sensitive to noise in the data).</p>
 </div>
 </div>
 </section>
@@ -2479,7 +2480,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>Regression ML problems predicts continuous/numeric outcomes, where as classification predicts a categorical outcome.</p>
 </div>
 </div>
 </section>
@@ -2496,7 +2497,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>Stratifying by the outcome ensures that each split has a similar distribution of y as the original dataset. This is especially important when the outcome is imbalanced, because one split might end up with too many or too few of a class without stratification.</p>
 </div>
 </div>
 </section>
@@ -2513,7 +2514,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>In v-fold validation, the data is split into v folds, and the model is trained v times (each using v-1 folds for training and one fold for validation). The RMSE is computed for each fold, and then averaged to estimate test RMSE. With repeats, this entire process is done multiple times with different random splits, and all RMSE values are averaged for a more stable estimate. V-fold validation makes better use of limited data and provides a more reliable estimate of model performance. Repeating the process also reduces variability from a single random split.</p>
 </div>
 </div>
 </section>
@@ -2530,7 +2531,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>We might use a bootstrap resampling procedure when we have a small dataset and want to make the most of limited data. It is also useful when we want to estimate the variability or uncertainty of model performance, as bootstrap naturally produces a distribution of estimates.</p>
 </div>
 </div>
 </section>
@@ -2547,7 +2548,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>Model tuning is the process of selecting the best values for a model’s hyperparameters by evaluating performance across different configurations. Settings must be chosen before training. We use it to improve model performance and generalization, since the right hyperparameters help balance underfitting and overfitting.</p>
 </div>
 </div>
 </section>
@@ -2564,7 +2565,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>RMSE, MAE (mean absolute error)</p>
 </div>
 </div>
 <p>What are two common performance metrics when dealing with a classification ML problem?</p>
@@ -2578,7 +2579,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p>Accuracy, Precision/Recall</p>
 </div>
 </div>
 </section>
@@ -2599,7 +2600,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p><strong>Inferential</strong>: It is looking at the cause-and-effect relationship between a high number of service calls and a customer’s likelihood of churn. The focus is on understanding the relationship between a specific variable and the outcome, rather than predicting churn.</p>
 </div>
 </div>
 <ol start="2" type="1">
@@ -2615,7 +2616,7 @@ vertical-align: -.125em;
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>YOUR SOLUTION HERE</p>
+<p><strong>Prediction</strong>: The goal is to estimate the likelihood of a customer churning in the next month. The focus is on accuracy predicting the outcome using available features, rather than understanding the effect of any specific variable.</p>
 </div>
 </div>
 </section>

@@ -49,8 +49,10 @@ Provide a brief outline/overview of the steps involved in a supervised machine l
 - Initial split 
 - Define recipes 
 - Define models
-- Fitting models to the training dataset
-- Fittitng models to the testing dataset
+- Perform resampling (eg. cross validation)
+- Tune hyperparameters
+- Fit final model on training data
+- Generate predictions on test data
 - Evaluate models' performances
 
 
@@ -63,9 +65,7 @@ Explain the difference between supervised and unsupervised learning.
 ::: {.callout-tip icon="false"}
 ## Solution
 
-Supervised learning involves automatic data pattern detection on pre-categorized data, where outcome y is not required. It consists of parametric and non-parametric models. For unsupervised learning, it involves pattern and structure recognition on unlabeled data. 
-
-**unsupervised learning has no target variable
+Supervised learning uses labeled data, meaning each observation includes both input features and an outcome variable y, so the model learns to predict an outcome variable from inputs. In contrast, unsupervised learning uses unlabeled data, where there is no outcome variable, and the model focuses on discovering patterns or structure within the input features themselves rather than predicting a specific output. 
 
 
 
@@ -114,7 +114,7 @@ What does it mean to be a mechanistic model?
 ::: {.callout-tip icon="false"}
 ## Solution
 
-Usually Parametric models, make assumptions on f(x)
+A mechanistic model tries to explicitly represent how and why the outcome occurs using known relationships, rules, or physical laws, instead of only using data to predict an outcome. 
 
 :::
 
@@ -125,7 +125,7 @@ What does it mean to be an empirically driven model?
 ::: {.callout-tip icon="false"}
 ## Solution
 
-Having no assumption about f(x)
+It focuses on learning relationships between inputs and an outcome based on patters in the data, instead of predicting an outcome based on known underlying mechanisms. 
 
 :::
 
@@ -136,7 +136,7 @@ How does the mechanistic and empirically driven model terminology relate to the 
 ::: {.callout-tip icon="false"}
 ## Solution
 
-Parametric models are mechanistic models, nonparametric models are empirically driven models 
+Mechanistic vs empirically driven models describe where a model comes from. Mechanistic models are based on known processes or theory, while empirical models are learned from data. Parametric vs nonparametric models describe how a model is structured. Parametric models assume a fixed functional form with a limited number of parameters, while nonparametric models are more flexible and can adapt to complex patterns. Mechanistic models are usually parametric, while empirically driven models can be either parametric or nonparametric. 
 
 :::
 
@@ -147,7 +147,8 @@ In general, is a mechanistic or empirically driven model easier to interpret? Ex
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+In general, mechanistic models are easier to interpret because they are based on known cause-and-effect relationships, so each parameter has a clear meaning. 
+Empirically driven models are often harder to interpret since they focus on fitting patters in data, and more flexible models (eg. random forest) can behave like black boxes. 
 
 :::
 
@@ -158,7 +159,7 @@ How does mechanistic and empirically driven model terminology relate to the idea
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+In general, mechanistic models are less flexible because they are built on predefined equations or theories, so their structure is fixed and only a few parameters can change. Empirically driven models are more flexible because they learn patterns directly from data and can adapt to complex relationships without assuming a specific form. 
 
 :::
 
@@ -169,7 +170,8 @@ Describe the bias-variance trade-off when considering the use of a mechanistic o
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Mechanistic models are typically less flexible, so they tend to have higher bias (they may oversimplify reality if the assumed mechanism is imperfect) but lower variance (they are more stable and less sensitive to the specific dataset). 
+In contrast, empirically driven models are often more flexible, meaning that they tend to have lower bias (they can fit complex patterns better) but higher variance (they may overfit and be sensitive to noise in the data). 
 
 :::
 
@@ -180,7 +182,7 @@ Explain the difference between a regression and classification machine learning 
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Regression ML problems predicts continuous/numeric outcomes, where as classification predicts a categorical outcome. 
 
 :::
 
@@ -191,7 +193,7 @@ When splitting the data, why is it useful to stratify by the outcome/target vari
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Stratifying by the outcome ensures that each split has a similar distribution of y as the original dataset. This is especially important when the outcome is imbalanced, because one split might end up with too many or too few of a class without stratification. 
 
 :::
 
@@ -202,7 +204,9 @@ Briefly describe how v-fold cross validation with repeats is used to estimate te
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+In v-fold validation, the data is split into v folds, and the model is trained v times (each using v-1 folds for training and one fold for validation). The RMSE is computed for each fold, and then averaged to estimate test RMSE. With repeats, this entire process is done multiple times with different random splits, and all RMSE values are averaged for a more stable estimate. 
+V-fold validation makes better use of limited data and provides a more reliable estimate of model performance. Repeating the process also reduces variability from a single random split. 
+
 
 :::
 
@@ -213,7 +217,7 @@ When might we use a bootstrap resampling procedure instead of v-fold cross valid
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+We might use a bootstrap resampling procedure when we have a small dataset and want to make the most of limited data. It is also useful when we want to estimate the variability or uncertainty of model performance, as bootstrap naturally produces a distribution of estimates. 
 
 :::
 
@@ -224,7 +228,8 @@ Briefly describe model tuning and why we use it.
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Model tuning is the process of selecting the best values for a model's hyperparameters by evaluating performance across different configurations. Settings must be chosen before training. 
+We use it to improve model performance and generalization, since the right hyperparameters help balance underfitting and overfitting. 
 
 :::
 
@@ -235,7 +240,7 @@ What are two common performance metrics when dealing with a regression ML proble
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+RMSE, MAE (mean absolute error)
 
 :::
 
@@ -244,7 +249,7 @@ What are two common performance metrics when dealing with a classification ML pr
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+Accuracy, Precision/Recall
 
 :::
 
@@ -259,7 +264,7 @@ A company with a subscription based service (for example Netflix, Disney+, New Y
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+**Inferential**: It is looking at the cause-and-effect relationship between a high number of service calls and a customer's likelihood of churn. The focus is on understanding the relationship between a specific variable and the outcome, rather than predicting churn. 
 
 :::
 
@@ -268,7 +273,7 @@ YOUR SOLUTION HERE
 ::: {.callout-tip icon="false"}
 ## Solution
 
-YOUR SOLUTION HERE
+**Prediction**: The goal is to estimate the likelihood of a customer churning in the next month. The focus is on accuracy predicting the outcome using available features, rather than understanding the effect of any specific variable. 
 
 :::
 
