@@ -225,16 +225,15 @@ In contrast, empirically driven models are often more flexible, meaning that the
 ::: {.callout-important icon="false"}
 
 ## Score 
-/5
+part (a), (d), (e), (f) 5/5
+part (b), (c) 4/5
+
+
 
 ## Explanation
+I would give myself 5/5 for part (a), (d), (e), (f) because my answers correctly explain the key concepts and relationships between mechanistic and empirically driven models, including interpretability, flexibility, and the bias-variance tradeoff.
 
-Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
-
-## Updated solution
-
-*Only required if a 3 or less is scored on the question.*
-
+However, in Part (b) my explanation was slightly vague and could have more explicitly mentioned the lack of a predefined functional form, and in Part (c) my answer had a minor inconsistency by suggesting empirically driven models can be either parametric or nonparametric. While comparing answers with the solution, I learned that the empirically driven models are all non-parametric. 
 
 :::
 
