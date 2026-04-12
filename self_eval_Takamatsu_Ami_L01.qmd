@@ -61,6 +61,21 @@ Provide a brief outline/overview of the steps involved in a supervised machine l
 
 :::
 
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+4/5
+
+## Explanation
+
+I would give myself a 4/5 because my answer includes most of the key steps in the supervised machine learning workflow and follows a logical order. I covered important components such as data cleaning, splitting, resampling, model definition, tuning, and evaluation. However, I was slightly vague in some areas and missed minor details, such as clearly emphasizing model selection as a separate step.
+
+
+:::
+
 ### Question 2
 
 Explain the difference between supervised and unsupervised learning.
@@ -70,6 +85,18 @@ Explain the difference between supervised and unsupervised learning.
 
 Supervised learning uses labeled data, meaning each observation includes both input features and an outcome variable y, so the model learns to predict an outcome variable from inputs. In contrast, unsupervised learning uses unlabeled data, where there is no outcome variable, and the model focuses on discovering patterns or structure within the input features themselves rather than predicting a specific output. 
 
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+5/5
+
+## Explanation
+
+I would give myself a 5/5 because my answer correctly explains the key difference between supervised and unsupervised learning, including the role of labeled vs. unlabeled data and their respective goals.
 
 
 :::
@@ -105,6 +132,20 @@ Produces a decision to a research question or tests a hypothesis
 Produces the most accurate prediction for new data
 
 :::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+4/5
+
+## Explanation
+
+I would give myself a 4/5 because my answers correctly identify the main goals of descriptive, inferential, and predictive models and are concise. However, some explanations are slightly simplified and miss a bit of detail, particularly for inferential models, where I could have more clearly emphasized understanding relationships and underlying assumptions.
+
+:::
+
 
 ### Question 4 
 
@@ -178,6 +219,26 @@ In contrast, empirically driven models are often more flexible, meaning that the
 
 :::
 
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+
+
+## Explanation
+
+Explain the score. Clearly identify what your misunderstandings were. Explain why you believe this error/misunderstanding occurred.
+
+## Updated solution
+
+*Only required if a 3 or less is scored on the question.*
+
+
+:::
+
+
 ### Question 5 
 
 Explain the difference between a regression and classification machine learning (ML) problems.
@@ -189,6 +250,21 @@ Regression ML problems predicts continuous/numeric outcomes, where as classifica
 
 :::
 
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+5/5
+
+## Explanation
+
+I would give myself a 5/5 because my answer clearly and correctly distinguishes between regression and classification by identifying the type of outcome variable (continuous vs categorical). 
+
+
+
+:::
+
 ### Question 6 
 
 When splitting the data, why is it useful to stratify by the outcome/target variable? 
@@ -197,6 +273,21 @@ When splitting the data, why is it useful to stratify by the outcome/target vari
 ## Solution
 
 Stratifying by the outcome ensures that each split has a similar distribution of y as the original dataset. This is especially important when the outcome is imbalanced, because one split might end up with too many or too few of a class without stratification. 
+
+:::
+
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+5/5
+
+## Explanation
+
+I would give myself a 5/5 because my answer clearly explains that stratification helps maintain a similar distribution of the outcome variable across splits and highlights its importance for imbalanced data. 
+
 
 :::
 
@@ -213,6 +304,20 @@ V-fold validation makes better use of limited data and provides a more reliable 
 
 :::
 
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+5/5
+
+## Explanation
+
+I would give myself a 5/5 because my answer clearly explains both how v-fold cross-validation with repeats works and why it is used. I correctly described the process of splitting data into folds, averaging RMSE across folds and repeats, and highlighted that it improves reliability by reducing variability and making better use of the data.
+
+
+:::
+
 ### Question 8
 
 When might we use a bootstrap resampling procedure instead of v-fold cross validation to estimate test RMSE?
@@ -221,6 +326,18 @@ When might we use a bootstrap resampling procedure instead of v-fold cross valid
 ## Solution
 
 We might use a bootstrap resampling procedure when we have a small dataset and want to make the most of limited data. It is also useful when we want to estimate the variability or uncertainty of model performance, as bootstrap naturally produces a distribution of estimates. 
+
+:::
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+5/5
+
+## Explanation
+
+I would give myself a 5/5 because my answer correctly identifies key scenarios for using bootstrap over v-fold cross-validation, including small datasets and estimating variability/uncertainty.
 
 :::
 
@@ -233,6 +350,19 @@ Briefly describe model tuning and why we use it.
 
 Model tuning is the process of selecting the best values for a model's hyperparameters by evaluating performance across different configurations. Settings must be chosen before training. 
 We use it to improve model performance and generalization, since the right hyperparameters help balance underfitting and overfitting. 
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+5/5
+
+## Explanation
+
+I would give myself a 5/5 because my answer clearly explains what model tuning is (selecting hyperparameters) and why we use it (to improve performance and generalization). I also correctly mentioned evaluating different configurations and the role of hyperparameters in balancing underfitting and overfitting.
 
 :::
 
@@ -253,6 +383,19 @@ What are two common performance metrics when dealing with a classification ML pr
 ## Solution
 
 Accuracy, Precision/Recall
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+5/5
+
+## Explanation
+
+I would give myself a 5/5 because I correctly identified two common performance metrics for both regression (RMSE, MAE) and classification (accuracy, precision/recall).
 
 :::
 
@@ -277,6 +420,19 @@ A company with a subscription based service (for example Netflix, Disney+, New Y
 ## Solution
 
 **Prediction**: The goal is to estimate the likelihood of a customer churning in the next month. The focus is on accuracy predicting the outcome using available features, rather than understanding the effect of any specific variable. 
+
+:::
+
+### Self Evaluation
+
+::: {.callout-important icon="false"}
+
+## Score 
+5/5
+
+## Explanation
+
+I would give myself a 5/5 because I correctly classified both questions and clearly explained the reasoning. I distinguished inferential (understanding cause-and-effect relationships) from predictive (estimating outcomes for new data) and applied those concepts accurately to each scenario.
 
 :::
 
