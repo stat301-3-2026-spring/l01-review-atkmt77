@@ -225,7 +225,7 @@ In contrast, empirically driven models are often more flexible, meaning that the
 ::: {.callout-important icon="false"}
 
 ## Score 
-
+/5
 
 ## Explanation
 
